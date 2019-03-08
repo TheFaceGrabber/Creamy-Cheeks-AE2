@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4174923efab0524bb9acdaea800edde, type: 3}
+  m_Name: Input Defaults
+  m_EditorClassIdentifier: 
+  Inputs:
+  - Name: Move Forward
+    MainInputType: 0
+    PositiveKey: 119
+    NegativeKey: 115
+    Axis: 
+    ButtonDirection: 0
+    AlternativeInputType: 1
+    AlternativePositiveKey: 0
+    AlternativeNegativeKey: 0
+    AlternativeAxis: Left Stick Y
+    AlternativeButtonDirection: 0
+  - Name: Move Sideways
+    MainInputType: 0
+    PositiveKey: 100
+    NegativeKey: 97
+    Axis: 
+    ButtonDirection: 0
+    AlternativeInputType: 1
+    AlternativePositiveKey: 0
+    AlternativeNegativeKey: 0
+    AlternativeAxis: Left Stick X
+    AlternativeButtonDirection: 0
+  - Name: Look Vertical
+    MainInputType: 1
+    PositiveKey: 0
+    NegativeKey: 0
+    Axis: Mouse Y
+    ButtonDirection: 0
+    AlternativeInputType: 1
+    AlternativePositiveKey: 0
+    AlternativeNegativeKey: 0
+    AlternativeAxis: Right Stick Y
+    AlternativeButtonDirection: 0
+  - Name: Look Horizontal
+    MainInputType: 1
+    PositiveKey: 0
+    NegativeKey: 0
+    Axis: Mouse X
+    ButtonDirection: 0
+    AlternativeInputType: 1
+    AlternativePositiveKey: 0
+    AlternativeNegativeKey: 0
+    AlternativeAxis: Right Stick X
+    AlternativeButtonDirection: 0
+  - Name: Jump
+    MainInputType: 0
+    PositiveKey: 32
+    NegativeKey: 0
+    Axis: 
+    ButtonDirection: 0
+    AlternativeInputType: 0
+    AlternativePositiveKey: 330
+    AlternativeNegativeKey: 0
+    AlternativeAxis: 
+    AlternativeButtonDirection: 0
+  - Name: Run
+    MainInputType: 0
+    PositiveKey: 304
+    NegativeKey: 0
+    Axis: 
+    ButtonDirection: 0
+    AlternativeInputType: 0
+    AlternativePositiveKey: 338
+    AlternativeNegativeKey: 0
+    AlternativeAxis: 
+    AlternativeButtonDirection: 0
+  - Name: Interact
+    MainInputType: 0
+    PositiveKey: 102
+    NegativeKey: 0
+    Axis: 
+    ButtonDirection: 0
+    AlternativeInputType: 0
+    AlternativePositiveKey: 332
+    AlternativeNegativeKey: 0
+    AlternativeAxis: 
+    AlternativeButtonDirection: 0
+  - Name: Toggle Flashlight
+    MainInputType: 0
+    PositiveKey: 118
+    NegativeKey: 0
+    Axis: 
+    ButtonDirection: 0
+    AlternativeInputType: 1
+    AlternativePositiveKey: 0
+    AlternativeNegativeKey: 0
+    AlternativeAxis: DPad X
+    AlternativeButtonDirection: 0
+  - Name: Cancel Interaction
+    MainInputType: 0
+    PositiveKey: 27
+    NegativeKey: 0
+    Axis: 
+    ButtonDirection: 0
+    AlternativeInputType: 0
+    AlternativePositiveKey: 331
+    AlternativeNegativeKey: 0
+    AlternativeAxis: 
+    AlternativeButtonDirection: 0
