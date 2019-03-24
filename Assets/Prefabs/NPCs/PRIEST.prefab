@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 114460149984281924}
   - component: {fileID: 195745145348625384}
   - component: {fileID: 114718720657961456}
+  - component: {fileID: 114886669836772314}
   m_Layer: 10
   m_Name: PRIEST
   m_TagString: Untagged
@@ -2191,6 +2192,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractText: to talk.
   InitBranch: {fileID: 11400000, guid: 3b4f88956b8d1c546afb54e5331503be, type: 2}
+--- !u!114 &114886669836772314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049811217052896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4778a5112d07dd143b469fcd14adaa55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136367509962872458
 CapsuleCollider:
   m_ObjectHideFlags: 1

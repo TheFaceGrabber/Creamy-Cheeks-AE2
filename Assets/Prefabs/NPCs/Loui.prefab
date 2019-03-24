@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 114357233314952670}
   - component: {fileID: 195906311773153438}
   - component: {fileID: 114717120256172004}
+  - component: {fileID: 114910768143065636}
   m_Layer: 10
   m_Name: Loui
   m_TagString: Untagged
@@ -1322,6 +1323,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractText: to talk.
   InitBranch: {fileID: 11400000, guid: fb6960e55c989d74ab85c2875abc32b0, type: 2}
+--- !u!114 &114910768143065636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471361746587836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4778a5112d07dd143b469fcd14adaa55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136213567076088892
 CapsuleCollider:
   m_ObjectHideFlags: 1

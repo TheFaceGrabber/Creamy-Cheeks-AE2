@@ -22,3 +22,7 @@ sysinfo.txt
 ProjectSettings/ProjectVersion\.txt
 
 Assets/Models/AI Test\.meta
+
+\.vs/
+
+\.idea/

@@ -19,6 +19,17 @@ namespace CreamyCheaks.AI.Actions
                 return;
             }
 
+            if (stateMachine.GetComponent<WerewolfFSM>())
+            {
+                stateMachine.Animator.SetBool("IsRunning", false);
+                stateMachine.Animator.SetBool("IsWalking", true);
+                stateMachine.Agent.speed = 1.5f;
+            }
+            else
+            {
+                stateMachine.Animator.SetBool("IsWalking", true);
+            }
+
             Vector3 loc = new Vector3(stateMachine.Agent.steeringTarget.x, stateMachine.transform.position.y,
                 stateMachine.Agent.steeringTarget.z);
             var dir = loc - stateMachine.transform.position;
@@ -28,7 +39,6 @@ namespace CreamyCheaks.AI.Actions
             stateMachine.HeadLookTarget = Vector3.zero;
 
             stateMachine.Agent.stoppingDistance = 1f;
-            stateMachine.Animator.SetBool("IsWalking", true);
             if (stateMachine.DistanceLeft <= stateMachine.Agent.stoppingDistance)
             {
                 var roomManager = GameObject.Find("RoomManager").GetComponent<RoomHandler>();

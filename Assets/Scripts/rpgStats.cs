@@ -10,6 +10,11 @@ public class rpgStats : MonoBehaviour {
     {
         private int value;  // the value of the stat
 
+        public int GetValue() //Added by Joe
+        {
+            return value;
+        }
+
         public void SetValue(int val)   // Set stat to specific value.
         {
             if(val <= 10 && val >= 0) // Stats all have a range of 0 to 10. If the desired value is within this range, set the value.

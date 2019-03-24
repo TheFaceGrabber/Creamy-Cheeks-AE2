@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 114167796123571038}
   - component: {fileID: 114457891973105346}
   - component: {fileID: 195325101142443370}
+  - component: {fileID: 114499384836116164}
   m_Layer: 10
   m_Name: Trophy Room Man
   m_TagString: Untagged
@@ -2224,6 +2225,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractText: to talk.
   InitBranch: {fileID: 11400000, guid: 9d8acfa73cc83eb4b9bf0f67e55d4615, type: 2}
+--- !u!114 &114499384836116164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602526277072302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4778a5112d07dd143b469fcd14adaa55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136086677918338846
 CapsuleCollider:
   m_ObjectHideFlags: 1
