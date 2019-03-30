@@ -705,6 +705,7 @@ GameObject:
   - component: {fileID: 114457891973105346}
   - component: {fileID: 195325101142443370}
   - component: {fileID: 114499384836116164}
+  - component: {fileID: 114883738031268950}
   m_Layer: 10
   m_Name: Trophy Room Man
   m_TagString: Untagged
@@ -2236,6 +2237,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4778a5112d07dd143b469fcd14adaa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Werewolf: {fileID: 1542734810150022, guid: ed4ae737f6326184c8de89da2e9f5c12, type: 2}
+--- !u!114 &114883738031268950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602526277072302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba62e9c0cd1616418326620315077fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartHealth: 10
+  StartSanity: 0
+  StartStrength: 0
+  StartAgility: 0
+  StartIntelligence: 0
+  StartWillpower: 0
+  StartPerception: 0
+  StartCharisma: 0
 --- !u!136 &136086677918338846
 CapsuleCollider:
   m_ObjectHideFlags: 1

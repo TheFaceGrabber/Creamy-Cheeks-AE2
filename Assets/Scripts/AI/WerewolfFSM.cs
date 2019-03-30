@@ -32,7 +32,8 @@ namespace CreamyCheaks.AI
         public void Damage()
         {
             //TODO Damage Player - change damage value?
-            GetComponent<rpgStats>().Health.Add(-1);
+            if(CurrentTarget)
+                CurrentTarget.SendMessage("TakeDamage",-1);
         }
 
         // Update is called once per frame
@@ -60,7 +61,7 @@ namespace CreamyCheaks.AI
         {
             if (CurrentTarget)
             {
-                if(CurrentTarget.GetComponent<rpgStats>().Health.GetValue() <= 0)
+                if(CurrentTarget.GetComponent<rpgStats>().Health.GetValue() <= 0 || !CurrentTarget.isActiveAndEnabled)
                     CurrentTarget = null;
                 else
                     return;
