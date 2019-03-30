@@ -9,6 +9,10 @@ public class DamagePlayer : MonoBehaviour {
 
     private void Awake()
     {
+        //Addition by joe
+        if(player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+
         playerStats = player.GetComponent<rpgStats>();
     }
 

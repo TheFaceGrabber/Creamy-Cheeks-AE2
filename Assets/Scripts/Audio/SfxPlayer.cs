@@ -24,6 +24,10 @@ public class SfxPlayer : MonoBehaviour
     /// <param name="Sfx"></param>
     public void PlaySfx(AudioClip Sfx)
     {
+        //Addition by Joe
+        if(Player == null)
+            Player = GameObject.Find("Player");
+        
         for (int i = 0; i < SfxPlayers.Length -1; i++)
         {
             if (!SfxPlayers[i].isPlaying)

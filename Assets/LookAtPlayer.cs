@@ -9,6 +9,13 @@ public class LookAtPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//Addition by joe
+		if (Cam == null)
+		{
+			if (Camera.main != null)
+				Cam = Camera.main;
+		}
+		
         Vector3 screenPoint = Cam.WorldToViewportPoint(transform.position);
         if(!(screenPoint.z > 0 && screenPoint.x > -0.2 && screenPoint.x < 1.2 && screenPoint.y > -0.2 && screenPoint.y < 1.2))
         {

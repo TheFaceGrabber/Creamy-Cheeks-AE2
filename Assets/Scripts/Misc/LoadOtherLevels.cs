@@ -10,6 +10,7 @@ public class LoadOtherLevels : MonoBehaviour {
         bool canLoadLower = true;
         bool canLoadUpper = true;
         bool canLoadUtil = true;
+        bool canLoadCellar = true;
 
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
@@ -22,6 +23,9 @@ public class LoadOtherLevels : MonoBehaviour {
 
             if (s.name == "UtillityScene")
                 canLoadUtil = false;
+            
+            if (s.name == "Cellar")
+                canLoadCellar = false;
         }
 
         if(canLoadLower)
@@ -30,5 +34,7 @@ public class LoadOtherLevels : MonoBehaviour {
             SceneManager.LoadSceneAsync("UpperFloor", LoadSceneMode.Additive);
         if (canLoadUtil)
             SceneManager.LoadSceneAsync("UtillityScene", LoadSceneMode.Additive);
+        //if (canLoadCellar)
+            //SceneManager.LoadSceneAsync("Cellar", LoadSceneMode.Additive);
     }
 }

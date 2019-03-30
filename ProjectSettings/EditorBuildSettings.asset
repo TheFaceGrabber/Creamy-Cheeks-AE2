@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UtillityScene.unity
     guid: 9bb7623715c575e438574b994e0fde80
+  - enabled: 1
+    path: Assets/Scenes/Cellar.unity
+    guid: f865205242a927a42b72bff549d5c03e
   m_configObjects: {}

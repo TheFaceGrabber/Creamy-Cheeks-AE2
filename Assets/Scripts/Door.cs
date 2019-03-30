@@ -7,7 +7,7 @@ public class Door : Interactable {
     protected GameObject DoorTwo;
     protected bool DoorOpen;
     public AudioClip OpenSfx;
-    
+
 	// Use this for initialization
 	void Start () {
         DoorOne = transform.parent.transform.GetChild(0).gameObject;

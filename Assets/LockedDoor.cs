@@ -26,10 +26,13 @@ public class LockedDoor : Door {
 
     public override void PlayerInteract()
     {
+        if (enabled == false)
+            return;
+        
         if(Room == null)
             Room = GameObject.Find("RoomManager").GetComponent<RoomHandler>().AllRooms.SingleOrDefault(x => x.name == RoomName);
 
-        if (Inventory.CheckForItem(ItemNeeded) || !Room.IsLocked)
+        if ((ItemNeeded == null || Inventory.CheckForItem(ItemNeeded)) || !Room.IsLocked)
         {
             Room.IsLocked = false;
             base.PlayerInteract();

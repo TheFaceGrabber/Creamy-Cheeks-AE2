@@ -22,6 +22,14 @@ public class MirrorRoom : MonoBehaviour
     public FiniteStateMachine[] Fsm;
     public Transform[] FsmLocations;
 
+    public GameObject CellarDoor;
+    
+    private void Start()
+    {
+        CellarDoor = GameObject.Find("Cellar Locked Door");
+        CellarDoor.SetActive(false);
+    }
+
     public void Begin()
     {
         hasMadeSacrifice = false;
@@ -70,6 +78,10 @@ public class MirrorRoom : MonoBehaviour
         }
 
         EndGameTrigger.SetActive(true);
+
+        GameObject.Find("Character Manager").GetComponent<CharacterManager>().LoadScene("Cellar");
+        
+        CellarDoor.SetActive(true);
 
         //TODO ADD MACHETTE
     }
