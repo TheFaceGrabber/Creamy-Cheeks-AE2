@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33507303786150524}
   - component: {fileID: 23051748188449648}
   - component: {fileID: 65265529378049974}
-  - component: {fileID: 114699666205392742}
+  - component: {fileID: 114253371708596454}
   m_Layer: 10
   m_Name: Revolver
   m_TagString: Untagged
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03903322, y: 0.06845383, z: 0.041903898}
   m_Center: {x: 0.00055773737, y: 0.034125514, z: -0.0014465442}
---- !u!114 &114699666205392742
+--- !u!114 &114253371708596454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,12 +105,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1657886513928686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb8d8bba6ead05249bf61e594149e528, type: 3}
+  m_Script: {fileID: 11500000, guid: 23c8ad6def10086478195098006e7e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: to Collect
   sprite: {fileID: 21300000, guid: b30d72b904626c943899b644710791ff, type: 3}
   ItemName: Revolver
-  ItemDescription: It has 6 bullets. I probably should not get this out.
-  Value: 0
+  ItemDescription: I don't know how to see how many bullets are left.
+  Value: 1
   WorldItem: {fileID: 1657886513928686}
