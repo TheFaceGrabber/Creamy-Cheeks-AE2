@@ -30,6 +30,14 @@ namespace CreamyCheaks.PlayerController
         [Header("Misc")]
         public LayerMask GroundCheckMask; //The mask used for ignore certain colliders when checking for grounded
 
+        [Header("Werewolf")]
+        public AudioClip[] AttackSounds;
+        public float AttackSpeed = 0.5f;
+
+        private float lastAttackTime;
+        bool isWerewolf = false;
+
+
         public GameObject Flashlight;
 
         public bool IsGrounded //Finds whether or not the player is on the ground
@@ -61,6 +69,11 @@ namespace CreamyCheaks.PlayerController
             if (!InputManager.IsInitialised) //Init input manager if not already initialised
                 InputManager.Initialise();
         }
+        
+        public void SetIsWerewolf(bool t)
+        {
+            isWerewolf = t;
+        }
 
         public void SetAllowInput(bool t)
         {
@@ -80,6 +93,32 @@ namespace CreamyCheaks.PlayerController
                 CameraRotation();
                 Movement();
                 HeadBob();
+
+                if (isWerewolf)
+                {
+                   if (InputManager.GetButtonDown("Attack") && Time.time > lastAttackTime + AttackSpeed)
+                    {
+                        GetComponentInChildren<Animator>().ResetTrigger("Attack");
+                        GetComponentInChildren<Animator>().SetTrigger("Attack");
+
+                        int ran = Random.Range(0, AttackSounds.Length);
+                        
+                        GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>().PlaySfx(AttackSounds[ran]);
+
+                        RaycastHit hit;
+                        if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, 2,
+                            GroundCheckMask))
+                        {
+                            var targ = hit.collider.transform.root.GetComponent<WerewolfTarget>();
+                            if (targ)
+                            {
+                                targ.TakeDamage(-2);
+                            }
+                        }
+                        
+                        lastAttackTime = Time.time;
+                    }
+                }
             }
         }
 

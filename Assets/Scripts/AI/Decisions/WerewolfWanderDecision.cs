@@ -18,7 +18,7 @@ namespace CreamyCheaks.AI.Decisions
             if (werewolf == null)
                 return false;
 
-            if (werewolf.CurrentTarget.GetComponent<rpgStats>().Health.GetValue() <= 0)
+            if (werewolf.CurrentTarget == null || werewolf.CurrentTarget.GetComponent<rpgStats>().Health.GetValue() <= 0)
                 return true;
 
             if (stateMachine.DistanceLeft <= stateMachine.Agent.stoppingDistance)

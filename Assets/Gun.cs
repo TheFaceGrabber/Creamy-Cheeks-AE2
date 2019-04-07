@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using CreamyCheaks.Input;
 using UnityEngine;
 
 public class Gun : Item {
@@ -15,7 +16,7 @@ public class Gun : Item {
 	// Update is called once per frame
 	void Update () {
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up), Color.green);
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (InputManager.GetButtonDown("Attack"))
         {
             Fire();
         }

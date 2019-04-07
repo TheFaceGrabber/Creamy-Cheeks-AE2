@@ -149,8 +149,6 @@ namespace CreamyCheaks.DialogSystem
                 if (branch.VoiceOver.ElementAtOrDefault(index) != null)
                 {
                     GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>().PlaySfx(branch.VoiceOver[index],transform.position);
-                    //TODO PLAY SOUND
-                    //GameManager.Instance.SoundsManager.PlaySound(branch.VoiceOver[index]);
                 }
 
                 int length = line.Length;

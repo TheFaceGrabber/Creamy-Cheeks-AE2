@@ -79,6 +79,7 @@ public class MirrorRoom : MonoBehaviour
 
         EndGameTrigger.SetActive(true);
 
+        //This loads the Cellar scene
         GameObject.Find("Character Manager").GetComponent<CharacterManager>().LoadScene("Cellar");
         
         CellarDoor.SetActive(true);

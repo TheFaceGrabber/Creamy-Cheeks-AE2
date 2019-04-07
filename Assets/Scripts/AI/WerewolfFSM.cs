@@ -33,7 +33,7 @@ namespace CreamyCheaks.AI
         {
             //TODO Damage Player - change damage value?
             if(CurrentTarget)
-                CurrentTarget.SendMessage("TakeDamage",-1);
+                CurrentTarget.SendMessage("TakeDamage",-2);
         }
 
         // Update is called once per frame
