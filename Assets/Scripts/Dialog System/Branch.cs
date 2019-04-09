@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using CreamyCheaks.AI;
 using UnityEngine;
 
 namespace CreamyCheaks.DialogSystem
@@ -31,6 +32,7 @@ namespace CreamyCheaks.DialogSystem
         {
             public string Text = "Alea Dwarhmann, hu farest þu?";
             public Branch NextBranch;
+            public State OverrideState;
             public bool FoldOut;
         }
     }

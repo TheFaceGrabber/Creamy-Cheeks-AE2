@@ -83,7 +83,7 @@ namespace CreamyCheaks.DialogSystem
                     }
                     else
                     {
-                        StartCoroutine(End());
+                        StartCoroutine(End(curBranch.GetReplies()[0].OverrideState));
                     }
                 }
             }
@@ -97,7 +97,7 @@ namespace CreamyCheaks.DialogSystem
                     }
                     else
                     {
-                        StartCoroutine(End());
+                        StartCoroutine(End(curBranch.GetReplies()[1].OverrideState));
                     }
                 }
             }
@@ -111,17 +111,21 @@ namespace CreamyCheaks.DialogSystem
                     }
                     else
                     {
-                        StartCoroutine(End());
+                        StartCoroutine(End(curBranch.GetReplies()[2].OverrideState));
                     }
                 }
             }
         }
 
-        IEnumerator End()
+        IEnumerator End(State ovrState = null)
         {
             if (curTalkingTo)
             {
                 curTalkingTo.EndTalk();
+                if (ovrState != null)
+                {
+                    curTalkingTo.CurrentState = ovrState;
+                }
                 curTalkingTo = null;
             }
 
