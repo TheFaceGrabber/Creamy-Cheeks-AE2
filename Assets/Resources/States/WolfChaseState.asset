@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc7feece2d08124c88d16308bc31559, type: 3}
+  m_Name: WolfChaseState
+  m_EditorClassIdentifier: 
+  Action: {fileID: 11400000, guid: e6fc814a35c695d4d9c5d5864b0e0025, type: 2}
+  Transitions:
+  - Decision: {fileID: 11400000, guid: 083856478fecfdf49b57668072b75223, type: 2}
+    TrueState: {fileID: 11400000, guid: 3d2c2626381c4b84dad9072a6325551c, type: 2}
+  - Decision: {fileID: 11400000, guid: 52668a022aa92b64785bcd805d2c56cc, type: 2}
+    TrueState: {fileID: 11400000, guid: abd8eb9a010baec459db14cad1c8c1d4, type: 2}
