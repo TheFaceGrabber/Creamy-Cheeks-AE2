@@ -18,4 +18,5 @@ MonoBehaviour:
   Replies:
   - Text: Hi... Loui?
     NextBranch: {fileID: 11400000, guid: ae084cd2f4cafaf468f16493cfe0773d, type: 2}
+    OverrideState: {fileID: 0}
     FoldOut: 0

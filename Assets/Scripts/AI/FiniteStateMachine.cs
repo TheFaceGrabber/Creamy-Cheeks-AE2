@@ -37,6 +37,8 @@ namespace CreamyCheaks.AI
 
         public bool DoesPlayerWantToInteract { get; private set; }
 
+        public Item ItemHeldForPlayer;
+
         public void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();

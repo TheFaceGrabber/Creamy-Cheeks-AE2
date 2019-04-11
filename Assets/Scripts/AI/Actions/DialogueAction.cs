@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CreamyCheaks.DialogSystem;
 using UnityEngine;
 
 namespace CreamyCheaks.AI.Actions
@@ -10,6 +11,9 @@ namespace CreamyCheaks.AI.Actions
     [CreateAssetMenu(menuName = "AI/Actions/Dialogue")]
     public class DialogueAction : Action
     {
+        public bool GivePlayerHeldItem = false;
+        public Branch Dialogue;
+        
         public override void Run(FiniteStateMachine stateMachine)
         {
             if (stateMachine == null)
@@ -26,6 +30,17 @@ namespace CreamyCheaks.AI.Actions
             stateMachine.WantedRotation =
                 dir == Vector3.zero ? stateMachine.transform.rotation : Quaternion.LookRotation(dir);
             stateMachine.HeadLookTarget = player.CameraTransform.position;
+
+            if (GivePlayerHeldItem && stateMachine.ItemHeldForPlayer != null && stateMachine.ItemHeldForPlayer.ItemPickedUp())
+            {
+                Debug.Log("Gave player item");
+                stateMachine.ItemHeldForPlayer = null;
+            }
+            
+            if (Dialogue)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueHolder>().BeginDialogue(Dialogue, stateMachine);
+            }
         }
     }
 }

@@ -9,6 +9,14 @@ namespace CreamyCheaks.AI.Actions
 	{
 		public override void Run(FiniteStateMachine stateMachine)
 		{
+			var gunObj = GameObject.Find("Gun Crate");
+			if (gunObj)
+			{
+				stateMachine.ItemHeldForPlayer = gunObj.GetComponent<GunWorldItem>();
+				gunObj.GetComponent<Collider>().enabled = false;
+			}
+			//if gunObj is null, it means the player already has the gun
+			
 			//Copy these two lines
 			stateMachine.enabled = true;
 			stateMachine.Agent.isStopped = false;

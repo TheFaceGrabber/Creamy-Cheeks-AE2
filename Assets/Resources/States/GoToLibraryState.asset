@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Name: GoToLibraryState
   m_EditorClassIdentifier: 
   Action: {fileID: 11400000, guid: 8ea2ac16c9d54014791e4040291b2778, type: 2}
-  Transitions: []
+  Transitions:
+  - Decision: {fileID: 11400000, guid: a171c27b2ae18bb48a10cea385ad17be, type: 2}
+    TrueState: {fileID: 11400000, guid: de6c602badecff44dbd1433c01e23c8a, type: 2}

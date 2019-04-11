@@ -11,6 +11,9 @@ namespace CreamyCheaks.AI.Actions
     {
         public override void Run(FiniteStateMachine stateMachine)
         {
+            //TODO Get formula!
+            
+            
             var node = GameObject.Find("GoToLibraryNode");
 
             stateMachine.Agent.SetDestination(node.transform.position);

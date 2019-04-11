@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Name: SearchForGun
   m_EditorClassIdentifier: 
   Action: {fileID: 11400000, guid: 2191ea58e58244042a898c68790806f1, type: 2}
-  Transitions: []
+  Transitions:
+  - Decision: {fileID: 11400000, guid: a171c27b2ae18bb48a10cea385ad17be, type: 2}
+    TrueState: {fileID: 11400000, guid: 0a8071ff3cc09c54f81bfb7b6907875d, type: 2}
