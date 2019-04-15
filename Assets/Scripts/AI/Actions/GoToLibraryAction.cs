@@ -11,16 +11,24 @@ namespace CreamyCheaks.AI.Actions
     {
         public override void Run(FiniteStateMachine stateMachine)
         {
-            //TODO Get formula!
+            //TODO FORMULA
             
-            
-            var node = GameObject.Find("GoToLibraryNode");
-
-            stateMachine.Agent.SetDestination(node.transform.position);
-
+            var gunObj = GameObject.Find("Formula Object");
+            if (gunObj)
+            {
+                stateMachine.ItemHeldForPlayer = gunObj.GetComponent<GunWorldItem>();
+                gunObj.GetComponent<Collider>().enabled = false;
+            }
+            //if gunObj is null, it means the player already has the gun
+			
+            //Copy these two lines
             stateMachine.enabled = true;
             stateMachine.Agent.isStopped = false;
 
+            var node = GameObject.Find("FindFormulaNode");
+            stateMachine.Agent.SetDestination(node.transform.position);
+			
+            //Keep all below here
             if (stateMachine.GetComponent<WerewolfFSM>())
             {
                 stateMachine.Animator.SetBool("IsRunning", false);
@@ -40,8 +48,8 @@ namespace CreamyCheaks.AI.Actions
 
             stateMachine.HeadLookTarget = Vector3.zero;
 
-            stateMachine.Agent.stoppingDistance = 0.5f;
-
+            stateMachine.Agent.stoppingDistance = 1f;
+			
             RaycastHit hit;
             if (Physics.Raycast(stateMachine.transform.position, stateMachine.transform.forward, out hit, 1))
             {

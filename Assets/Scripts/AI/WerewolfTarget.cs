@@ -44,7 +44,10 @@ public class WerewolfTarget : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(Werewolf, transform.position, transform.rotation);
+                    var obj = Instantiate(Werewolf, transform.position, transform.rotation);
+                    
+                    GameObject.Find("Character Manager").GetComponent<WerewolfTracker>().UpdateCharacter(name,obj);
+
                     Destroy(this);
                     gameObject.SetActive(false);
                 }
