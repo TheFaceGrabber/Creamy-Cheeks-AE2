@@ -15,6 +15,17 @@ public class DamagePlayer : MonoBehaviour {
 
         playerStats = player.GetComponent<rpgStats>();
     }
+    
+	public void attackPlayerVal(int damage)
+    {
+        if (!playerStats.Strength.RollCheck())
+        {
+            playerStats.Health.Add(-damage);
+        }
+
+        Debug.Log("attackPlayer executed");
+
+    }
 
 	public void attackPlayer()
     {
