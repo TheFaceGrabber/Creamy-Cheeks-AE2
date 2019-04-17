@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using CreamyCheaks.Input;
 using UnityEngine;
+using CreamyCheaks.AI;
+using UnityEngine.AI;
 
 public class Gun : Item {
     public int BulletCount;
@@ -43,6 +45,11 @@ public class Gun : Item {
                 {
                     //if silver bullets kill
                     print("Hit Werewolf");
+                    hit.transform.GetComponent<FiniteStateMachine>().enabled = false;
+                    hit.transform.GetComponent<NavMeshAgent>().enabled = false;
+
+                    hit.transform.GetComponent<Animator>().ResetTrigger("Death");
+                    hit.transform.GetComponent<Animator>().SetTrigger("Death");
                 }
                
             }
