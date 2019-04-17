@@ -107,8 +107,8 @@ MonoBehaviour:
   WhatCanShoot:
     serializedVersion: 2
     m_Bits: 1024
-  MainCamera: {fileID: 0}
   UsingSilverBullets: 0
+  Sound: {fileID: 8300000, guid: 9235df75b63e623428f9ec2f61fc7883, type: 3}
 --- !u!136 &136426757296484854
 CapsuleCollider:
   m_ObjectHideFlags: 1
