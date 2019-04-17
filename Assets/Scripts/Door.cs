@@ -21,9 +21,16 @@ public class Door : Interactable {
 
     public override void PlayerInteract()
     {
+	    DoorOne = transform.parent.transform.GetChild(0).gameObject;
+	    DoorTwo = transform.parent.transform.GetChild(1).gameObject;
+	    
         GetComponent<BoxCollider>().enabled = false;
         DoorOne.transform.Rotate(new Vector3(0, -90, 0));
         DoorTwo.transform.Rotate(new Vector3(0, 90, 0));
+        
+        if(!Sfx)
+	        Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
+        
         Sfx.PlaySfx(OpenSfx, transform.position);
     }
 

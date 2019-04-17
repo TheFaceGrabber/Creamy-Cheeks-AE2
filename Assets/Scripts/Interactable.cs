@@ -8,7 +8,6 @@ public class Interactable : MonoBehaviour {
     public string InteractText;
 	// Use this for initialization
 	void Awake () {
-        Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
     //    UI = GameObject.Find("UI").GetComponent<UIManager>();
     if (InteractText == "")
         {
@@ -23,6 +22,7 @@ public class Interactable : MonoBehaviour {
 
     public virtual void PlayerInteract()
     {
-        
+	    if(!Sfx)
+			Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
     }
 }

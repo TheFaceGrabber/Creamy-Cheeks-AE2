@@ -27,7 +27,7 @@ public class MirrorRoom : MonoBehaviour
     private void Start()
     {
         CellarDoor = GameObject.Find("Cellar Locked Door");
-        CellarDoor.SetActive(false);
+        CellarDoor.GetComponent<LockedDoor>().enabled = false;
     }
 
     public void Begin()
@@ -77,12 +77,12 @@ public class MirrorRoom : MonoBehaviour
             Fsm[i].transform.eulerAngles = FsmLocations[i].transform.eulerAngles;
         }
 
-        EndGameTrigger.SetActive(true);
+        EndGameTrigger.SetActive(false);
+        CellarDoor.GetComponent<LockedDoor>().enabled = true;
 
         //This loads the Cellar scene
         GameObject.Find("Character Manager").GetComponent<CharacterManager>().LoadScene("Cellar");
-        
-        CellarDoor.SetActive(true);
+
 
         //TODO ADD MACHETTE
     }

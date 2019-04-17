@@ -29,6 +29,9 @@ public class LockedDoor : Door {
         if (enabled == false)
             return;
         
+        DoorOne = transform.parent.transform.GetChild(0).gameObject;
+        DoorTwo = transform.parent.transform.GetChild(1).gameObject;
+        
         if(Room == null)
             Room = GameObject.Find("RoomManager").GetComponent<RoomHandler>().AllRooms.SingleOrDefault(x => x.name == RoomName);
 

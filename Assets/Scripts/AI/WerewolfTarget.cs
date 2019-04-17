@@ -25,7 +25,7 @@ public class WerewolfTarget : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log(gameObject.name + " took damage");
-        stats.Health.Add(damage);
+
         if (stats.Health.GetValue() > 0)
         {
             float ran = Random.value;
@@ -48,7 +48,7 @@ public class WerewolfTarget : MonoBehaviour
                     
                     GameObject.Find("Character Manager").GetComponent<WerewolfTracker>().UpdateCharacter(name,obj);
 
-                    Destroy(this);
+                    Destroy(gameObject);
                     gameObject.SetActive(false);
                 }
             }
