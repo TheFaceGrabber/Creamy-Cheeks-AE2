@@ -10,6 +10,10 @@ public class Gun : Item {
     public float ShootDistance;
     public LayerMask WhatCanShoot;
     public bool UsingSilverBullets;
+
+    public AudioClip Sound;
+
+    SfxPlayer Sfx; 
 	// Use this for initialization
 	void Start () {
 		
@@ -27,9 +31,14 @@ public class Gun : Item {
 
     public virtual void Fire()
     {
-        if (BulletCount > 0)
-        {
-            BulletCount--;
+        //TODO Add bullets
+        //if (BulletCount > 0)
+        // {
+        if(!Sfx)
+            Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
+
+        Sfx.PlaySfx(Sound);
+        BulletCount--;
             print("Shot");
 
            RaycastHit hit;
@@ -53,7 +62,7 @@ public class Gun : Item {
                 }
                
             }
-        }
+        //}
             
     }
 }
