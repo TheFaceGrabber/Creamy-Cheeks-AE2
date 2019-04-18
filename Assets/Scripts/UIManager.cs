@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour {
 
     IEnumerator FadeIn()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         Color newcolor = Fader.color;
         for (int i = 0; i < 20; i++)
         {

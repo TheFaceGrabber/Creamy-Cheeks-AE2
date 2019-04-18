@@ -25,14 +25,14 @@ public class LevelSelector : MonoBehaviour {
     public void SelectNext()
     {
         CurrentSelection++;
-        if (CurrentSelection > 3) CurrentSelection = 0;
+        if (CurrentSelection > 2) CurrentSelection = 0;
         UpdateInfo();
     }
 
     public void SelectPrevious()
     {
         CurrentSelection--;
-        if (CurrentSelection < 0) CurrentSelection = 3;
+        if (CurrentSelection < 0) CurrentSelection = 2;
         UpdateInfo();
     }
 
@@ -52,7 +52,7 @@ public class LevelSelector : MonoBehaviour {
 
             case (2):
                 LevelName.text = "Basement";
-               // LevelImage.sprite = Basement;
+                LevelImage.sprite = Basement;
                 break;
 
             case (3):
@@ -75,19 +75,24 @@ public class LevelSelector : MonoBehaviour {
     {
         GL.GameStart();
         GL.ToggleLevelSelect();
-        yield return new WaitForSeconds(1.5f);
-
-        switch (CurrentSelection)
-        {
-            case (3): //skip basement
+        yield return new WaitForSeconds(1.4f);
+        if (CurrentSelection >= 1) GameObject.Find("GroundFloorCompleter").GetComponent<LevelLoader>().SkipLevel();
+        yield return new WaitForSeconds(0);
+        if (CurrentSelection >= 2) GameObject.Find("UpperFloorCompleter").GetComponent<LevelLoader>().SkipLevel();
+        //if (CurrentSelection == 3) GameObject.Find("BasementCompleter").GetComponent<LevelLoader>().SkipLevel();
+        
+        
+        //switch (CurrentSelection)
+        //{
+        //    case (3): //skip basement
                 
-            case (2): //skip upper floor
+        //    case (2): //skip upper floor
 
-            case (1)://skip ground floor
-                GameObject.Find("GroundFloorCompleter").GetComponent<LevelLoader>().SkipLevel();
-                break;
+        //    case (1)://skip ground floor
+        //        GameObject.Find("GroundFloorCompleter").GetComponent<LevelLoader>().SkipLevel();
+        //        break;
 
-        };
+        //};
 
 
         yield return new WaitForSeconds(10);

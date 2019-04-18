@@ -8,6 +8,7 @@ public class Curtain : Interactable {
 	// Use this for initialization
 	void Start () {
         mainCurtain = transform.parent.GetComponent<CurtainMain>();
+        Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
 	}
 	
 	// Update is called once per frame

@@ -91,4 +91,10 @@ public class MirrorRoom : MonoBehaviour
     {
         FindObjectOfType<UIManager>().EndGame();
     }
+
+    public void SkipCommand() //Added by LC
+    {
+        Begin();
+        hasMadeSacrifice = true;
+    }
 }

@@ -7,7 +7,7 @@ public class Window : Interactable {
     public AudioClip WindowSfx;
 	// Use this for initialization
 	void Start () {
-		
+        Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,7 @@ public class Window : Interactable {
        if (IsLeft) transform.Rotate(0, -90, 0);
        else transform.Rotate(0, 90, 0);
         IsLeft = !IsLeft;
+        
         Sfx.PlaySfx(WindowSfx, transform.position);
     }
 }

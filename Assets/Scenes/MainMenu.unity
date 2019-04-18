@@ -3196,7 +3196,7 @@ MonoBehaviour:
   LevelImage: {fileID: 119053422}
   GroundFloor: {fileID: 21300000, guid: 87a36e665cff9264d9912d0597be75e8, type: 3}
   UpperFloor: {fileID: 21300000, guid: 7a8be3d1a0c771b4c8eb12fa13d0f48a, type: 3}
-  Basement: {fileID: 0}
+  Basement: {fileID: 21300000, guid: 5652e804eb3548b41b273532c7ac3cb4, type: 3}
   Climax: {fileID: 0}
 --- !u!4 &298962146
 Transform:
