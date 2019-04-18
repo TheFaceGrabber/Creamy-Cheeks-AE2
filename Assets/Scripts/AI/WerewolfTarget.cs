@@ -51,6 +51,9 @@ public class WerewolfTarget : MonoBehaviour
                     Destroy(gameObject);
                     gameObject.SetActive(false);
                 }
+
+                var go = GameObject.Find("Ending Cinematic");
+                go.GetComponent<EndCinematic>().TryRunCinematic();
             }
         }
     }
