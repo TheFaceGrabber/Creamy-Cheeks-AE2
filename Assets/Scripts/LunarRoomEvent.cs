@@ -12,7 +12,7 @@ public class LunarRoomEvent : MonoBehaviour
 	public GameObject Priest;
 	GameObject Loui;
 	public GameObject LouiWolf;
-	
+    public AudioClip Music;
 	public GameObject Werewolf;
 	
 	// Use this for initialization
@@ -47,7 +47,7 @@ public class LunarRoomEvent : MonoBehaviour
         LouiWolf.GetComponent<FiniteStateMachine>().enabled = false;
 
         Cinematic.Play();
-		
+        GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>().ChangeMusic(Music);
 		yield return new WaitForSeconds(15);
 
         Cinematic.Stop();

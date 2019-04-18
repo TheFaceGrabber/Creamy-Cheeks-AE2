@@ -32,6 +32,7 @@ public class EndCinematic : MonoBehaviour {
 
     IEnumerator RunEndCinematic()
     {
+        yield return new WaitForSeconds(3);
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player)
             player.SetActive(false);
