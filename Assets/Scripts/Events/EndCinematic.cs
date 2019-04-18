@@ -8,6 +8,7 @@ public class EndCinematic : MonoBehaviour {
 
     public Camera cam;
     public PlayableDirector PlayableDirector;
+    public GameObject WolfyBoy;
 
     public bool TryRunCinematic()
     {
@@ -26,6 +27,7 @@ public class EndCinematic : MonoBehaviour {
         if (player)
             player.SetActive(false);
 
+        WolfyBoy.SetActive(true);
         cam.gameObject.SetActive(true);
         PlayableDirector.Play();
 
