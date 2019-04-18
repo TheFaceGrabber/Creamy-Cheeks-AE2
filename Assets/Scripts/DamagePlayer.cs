@@ -18,9 +18,10 @@ public class DamagePlayer : MonoBehaviour {
     
 	public void attackPlayerVal(int damage)
     {
-        if (!playerStats.Strength.RollCheck())
+      //  if (!playerStats.Strength.RollCheck())
         {
             playerStats.Health.Add(-damage);
+            playerStats.UpdateUI(); //lc
         }
 
         Debug.Log("attackPlayer executed");
@@ -29,9 +30,10 @@ public class DamagePlayer : MonoBehaviour {
 
 	public void attackPlayer()
     {
-        if (!playerStats.Strength.RollCheck())
+       // if (!playerStats.Strength.RollCheck())
         {
             playerStats.Health.Add(-1);
+            playerStats.UpdateUI(); //lc
         }
 
         Debug.Log("attackPlayer executed");

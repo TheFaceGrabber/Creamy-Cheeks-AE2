@@ -6,6 +6,8 @@ public class rpgStats : MonoBehaviour {
 
     public int StartHealth, StartSanity, StartStrength, StartAgility, StartIntelligence, StartWillpower, StartPerception, StartCharisma; // public ints to enter a characters starting stats.
 
+
+
     public struct stat
     {
         private int value;  // the value of the stat
@@ -40,6 +42,8 @@ public class rpgStats : MonoBehaviour {
             }
         }
 
+
+
         public bool RollCheck()
         {
             if(Random.Range(1, value) <= value)
@@ -66,5 +70,10 @@ public class rpgStats : MonoBehaviour {
         Perception.SetValue(StartPerception);
         Charisma.SetValue(StartCharisma);
         GameObject.Find("UI").GetComponent<UIManager>().SetStats(StartStrength, StartAgility, StartIntelligence, StartWillpower, StartPerception, StartCharisma); //This line added by Lewis. Will crash however if value is over max value. Need to update
+    }
+
+    public void UpdateUI()
+    {
+        GameObject.Find("UI").GetComponent<UIManager>().UpdateHealth(Health.GetValue());
     }
 }
