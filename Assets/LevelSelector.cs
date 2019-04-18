@@ -42,12 +42,12 @@ public class LevelSelector : MonoBehaviour {
         {
             case (0):
                 LevelName.text = "Ground Floor";
-               // LevelImage.sprite = GroundFloor;
+               LevelImage.sprite = GroundFloor;
                 break;
 
             case (1):
                 LevelName.text = "Upper Floor";
-               // LevelImage.sprite = UpperFloor;
+                LevelImage.sprite = UpperFloor;
                 break;
 
             case (2):
