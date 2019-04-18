@@ -28,7 +28,7 @@ namespace CreamyCheaks.AI
         {
             base.Start();
         }
-
+        
         public void Damage()
         {
             //TODO Damage Player - change damage value?

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - POI
   - NPC
+  - Werewolf
   layers:
   - Default
   - TransparentFX

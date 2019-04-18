@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class EndCinematic : MonoBehaviour {
 
@@ -12,8 +13,16 @@ public class EndCinematic : MonoBehaviour {
 
     public bool TryRunCinematic()
     {
-        var list = FindObjectsOfType<WerewolfTarget>();
-        if (list.Length > 0)
+        Debug.Log("TryRunCinematic");
+
+        var list = FindObjectsOfType<WerewolfTarget>().ToList();
+        list.ForEach(x =>
+        {
+            if (!x.gameObject.activeInHierarchy || x.enabled == false)
+                list.Remove(x);
+        });
+
+        if (list.Count > 0)
             return false;
 
         StartCoroutine("RunEndCinematic");

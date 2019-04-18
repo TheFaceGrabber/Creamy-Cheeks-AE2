@@ -34,35 +34,43 @@ public class Gun : Item {
         //TODO Add bullets
         //if (BulletCount > 0)
         // {
-        if(!Sfx)
+        if (!Sfx)
             Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
 
         Sfx.PlaySfx(Sound);
         BulletCount--;
-            print("Shot");
+        print("Shot");
 
-           RaycastHit hit;
-              if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, ShootDistance, WhatCanShoot))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.up, out hit, ShootDistance, WhatCanShoot))
+        {
+            Debug.DrawLine(transform.position, hit.point, Color.red, 5);
+            if (hit.transform.gameObject.CompareTag("NPC"))
             {
-                if (hit.transform.gameObject.CompareTag("NPC"))
-                {
-                    //damage them for however much
-                        print("Hit NPC");
-                }
-
-                if (hit.transform.gameObject.CompareTag("Werewolf"))
-                {
-                    //if silver bullets kill
-                    print("Hit Werewolf");
-                    hit.transform.GetComponent<FiniteStateMachine>().enabled = false;
-                    hit.transform.GetComponent<NavMeshAgent>().enabled = false;
-
-                    hit.transform.GetComponent<Animator>().ResetTrigger("Death");
-                    hit.transform.GetComponent<Animator>().SetTrigger("Death");
-                }
-               
+                //damage them for however much
+                print("Hit NPC");
             }
+
+            if (hit.transform.gameObject.CompareTag("Werewolf"))
+            {
+                //if silver bullets kill
+                print("Hit Werewolf");
+
+                hit.transform.gameObject.name = "DEADWOLF";
+
+                hit.transform.GetComponent<CreamyCheaks.AI.WerewolfFSM>().enabled = false;
+                hit.transform.GetComponent<NavMeshAgent>().enabled = false;
+
+                hit.transform.GetComponent<Animator>().ResetTrigger("Death");
+                hit.transform.GetComponent<Animator>().SetTrigger("Death");
+
+
+                var go = GameObject.Find("Win Cinematic");
+                go.GetComponent<WinCinematic>().TryRunCinematic();
+            }
+
+        }
         //}
-            
+
     }
 }

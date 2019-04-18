@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 195882548723080874}
   m_Layer: 12
   m_Name: Werewolf
-  m_TagString: Untagged
+  m_TagString: Werewolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1780,6 +1780,7 @@ MonoBehaviour:
   CurrentPOI: {fileID: 0}
   IsAtPOI: 0
   ReactionsToBrokenObjects: []
+  ItemHeldForPlayer: {fileID: 0}
   AttackDistance: 2
   TargetScanDistance: 15
   ScanRate: 0.5
