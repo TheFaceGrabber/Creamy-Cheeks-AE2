@@ -14,6 +14,7 @@ public class Vase : MoveableObject {
 	void Start () {
         myRigid = GetComponent<Rigidbody>();
         SetMarker();
+        Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
     }
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class Vase : MoveableObject {
 
     private void Smash()
     {
-        Sfx.PlaySfx(SmashSfx, transform.position);
+        if (Sfx != null) Sfx.PlaySfx(SmashSfx, transform.position);
         GetComponent<ObjectBreakReactor>().OnBreak();
         print("Smash");
         if (HasLoot) Instantiate (Loot, transform.position, transform.rotation);

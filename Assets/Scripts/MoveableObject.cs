@@ -13,6 +13,7 @@ public class MoveableObject : Interactable {
 	// Use this for initialization
 	void Start () {
         SetMarker();
+        Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
 	}
 
     public void SetMarker()
@@ -34,7 +35,7 @@ public class MoveableObject : Interactable {
 
     public override void PlayerInteract()
     {
-        Sfx.PlaySfx(PickUpSfx);
+       if (Sfx != null) Sfx.PlaySfx(PickUpSfx);
         BeingMoved = !BeingMoved;
         player.HoldingItem(this.gameObject);
         GetComponent<BoxCollider>().isTrigger = !GetComponent<BoxCollider>().isTrigger;
