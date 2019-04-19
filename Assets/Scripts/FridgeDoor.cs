@@ -14,6 +14,7 @@ public class FridgeDoor : Interactable
     // Use this for initialization
     void Start()
     {
+        Sfx = GameObject.Find("SfxPlayer").GetComponent<SfxPlayer>();
         hasBeenOpened = false;
         InteractText = OpenText;
     }
