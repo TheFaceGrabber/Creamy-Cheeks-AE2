@@ -58,7 +58,7 @@ public class Gun : Item {
 
                 hit.transform.gameObject.name = "DEADWOLF";
 
-                hit.transform.GetComponent<CreamyCheaks.AI.WerewolfFSM>().enabled = false;
+                hit.transform.GetComponent<CreamyCheaks.AI.WerewolfFSM>().isAlive = false;
                 hit.transform.GetComponent<NavMeshAgent>().enabled = false;
 
                 hit.transform.GetComponent<Animator>().ResetTrigger("Death");

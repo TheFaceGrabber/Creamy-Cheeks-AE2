@@ -52,6 +52,8 @@ public class WerewolfTarget : MonoBehaviour
                     gameObject.SetActive(false);
                 }
 
+                CreamyCheaks.AI.WerewolfFSM.CurrentWerewolfCount++;
+
                 var go = GameObject.Find("Ending Cinematic");
                 go.GetComponent<EndCinematic>().TryRunCinematic();
             }

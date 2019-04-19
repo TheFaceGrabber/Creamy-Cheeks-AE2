@@ -6,6 +6,8 @@ namespace CreamyCheaks.AI
 {
     public class WerewolfFSM : FiniteStateMachine
     {
+        public static int CurrentWerewolfCount = 1;
+
         public float AttackDistance = 2;
 
         public float TargetScanDistance = 15;
@@ -17,6 +19,8 @@ namespace CreamyCheaks.AI
         public Vector3 LastKnowTargetPos { get; private set; }
 
         private float lastScanTime;
+
+        public bool isAlive = true;
 
         public void Awake()
         {
@@ -39,9 +43,12 @@ namespace CreamyCheaks.AI
         // Update is called once per frame
         public void Update()
         {
-            base.Update();
-            ScanForTargets();
-            FollowTarget();
+            if (isAlive)
+            {
+                base.Update();
+                ScanForTargets();
+                FollowTarget();
+            }
         }
 
         void FollowTarget()

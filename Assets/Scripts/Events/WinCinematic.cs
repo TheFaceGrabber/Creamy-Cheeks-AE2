@@ -16,14 +16,9 @@ public class WinCinematic : MonoBehaviour {
     {
         Debug.Log("TryRunCinematic");
 
-        var list = FindObjectsOfType<CreamyCheaks.AI.WerewolfFSM>().ToList();
-        list.ForEach(x =>
-        {
-            if (x.gameObject.name == "DEADWOLF") 
-                list.Remove(x);
-        });
-
-        if (list.Count > 0)
+        var list = FindObjectsOfType<CreamyCheaks.AI.WerewolfFSM>().Where(x => x.name == "DEADWOLF").ToList();
+        
+        if (list.Count >= CreamyCheaks.AI.WerewolfFSM.CurrentWerewolfCount)
             return false;
 
         StartCoroutine("RunEndCinematic");
@@ -33,6 +28,7 @@ public class WinCinematic : MonoBehaviour {
 
     IEnumerator RunEndCinematic()
     {
+        print("End");
         yield return new WaitForSeconds(3);
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player)
