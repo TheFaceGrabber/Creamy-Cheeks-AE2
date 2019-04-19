@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameLauncher : MonoBehaviour {
     public Image Fader;
     public GameObject SelectPanel;
+    public GameObject ControlsPanel;
 	// Use this for initialization
 	void Start () {
         Fader.enabled = false;
@@ -45,5 +46,10 @@ public class GameLauncher : MonoBehaviour {
     public void ToggleLevelSelect() {
         SelectPanel.SetActive(!SelectPanel.activeInHierarchy);
 
+    }
+
+    public void ToggleControls()
+    {
+        ControlsPanel.SetActive(!ControlsPanel.activeInHierarchy);
     }
 }
